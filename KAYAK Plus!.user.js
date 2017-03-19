@@ -80,7 +80,7 @@
         autosize(cloned);
 
         // remove unneeded helper div
-        var helperDiv = document.querySelector('.expansiveTextAreaHelperDiv');
+        var helperDiv = document.querySelector('div[class="expansiveTextAreaHelperDiv"]');
         if (helperDiv)
             helperDiv.parentNode.removeChild(helperDiv);
     });
