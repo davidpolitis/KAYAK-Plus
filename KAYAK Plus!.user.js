@@ -4,7 +4,7 @@
 // @author    	 David Politis
 // @version      1.0
 // @date         2017-03-14
-// @description  Improves trip planning for KAYAK.
+// @description  Improves trip planning for KAYAK, including auto-sizing of notes.
 // @match        https://www.ca.kayak.com/trips/*/h/*
 // @match        https://www.cn.kayak.com/trips/*/h/*
 // @match        https://www.fi.kayak.com/trips/*/h/*
@@ -65,9 +65,8 @@
 
     // Auto-resize inline note editor
     document.arrive('.notesTextEditHolder', {fireOnAttributesModification: true}, function() {
-        if (this.style.display == 'block') {
+        if (this.style.display == 'block')
             autosize(this.querySelector('textarea[class="resizable notes"]'));
-        }
     });
 
     // Auto-resize modal note editor
@@ -81,7 +80,7 @@
         autosize(cloned);
 
         // remove unneeded helper div
-        var helperDiv = document.querySelector('.expansiveTextAreaHelperDiv');
+        var helperDiv = document.querySelector('div[class="expansiveTextAreaHelperDiv"]');
         if (helperDiv)
             helperDiv.parentNode.removeChild(helperDiv);
     });
